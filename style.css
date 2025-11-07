@@ -1,0 +1,622 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #2c63f8;
+    color: rgb(145, 183, 226);
+    padding: 15px 0;
+    text-align: center;
+    animation: slideDown 0.5s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffcc00;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #004b8d, #0072ce);
+    color: white;
+    margin-bottom: 40px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    background: oklch(83.845% 0.2031 121.913);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.btn:hover {
+    background: #1a4cd1;
+    transform: translateY(-2px);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(44, 99, 248, 0.4);
+    }
+    70% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 10px rgba(44, 99, 248, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(44, 99, 248, 0);
+    }
+}
+
+#benefits {
+    padding: 60px 20px;
+    background: #ffffff;
+}
+
+#benefits h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #004b8d;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+#benefits h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #2c63f8;
+    margin: 15px auto 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: #004b8d;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+#reimbursements {
+    padding: 60px 20px;
+    background: #f8fafc;
+}
+
+#reimbursements h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #004b8d;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+#reimbursements h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #2c63f8;
+    margin: 15px auto 0;
+}
+
+form {
+    background: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid #f0f0f0;
+}
+
+form label {
+    display: block;
+    margin: 15px 0 8px;
+    color: #004b8d;
+    font-weight: 500;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+footer {
+    background: #1a2942;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffd633;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    form {
+        padding: 20px;
+        margin: 15px;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+}
+
+/* Status check panel styling */
+.status-panel {
+    max-width: 900px;
+    margin: 30px auto;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.status-intro {
+    flex: 1 1 45%;
+    min-width: 220px;
+}
+
+.status-intro h3 {
+    margin: 0 0 8px 0;
+    color: #004b8d;
+}
+
+.status-intro p {
+    color: #33475b;
+    line-height: 1.5;
+}
+
+.status-form-wrap {
+    flex: 1 1 55%;
+    min-width: 260px;
+}
+
+.status-form {
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(15,38,75,0.04);
+    border: 1px solid #eef3fb;
+}
+
+.status-form label { display:block; margin-bottom:6px; color:#16335b; font-weight:600; }
+.status-form input[type="text"] { font-size:1rem; padding:10px; }
+.status-form .help { font-size:0.9rem; color:#6b7a90; margin-top:8px; }
+
+@media (max-width: 768px) {
+    .status-panel { flex-direction: column; padding: 0 12px; }
+}
+
+.admin-panel {
+    padding: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #004b8d;
+    color: white;
+}
+
+.approve-btn, .reject-btn, .view-receipt-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    margin: 0 4px;
+}
+
+.view-receipt-btn {
+    background-color: #0066cc;
+}
+
+.view-receipt-btn:hover {
+    background-color: #0052a3;
+}
+
+.approve-btn {
+    background-color: #28a745;
+}
+
+.reject-btn {
+    background-color: #dc3545;
+}
+.status {
+    font-weight: bold;
+}
+
+/* Receipt Modal Styles */
+.receipt-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #000;
+}
+
+.file-info {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8fafc;
+    border-radius: 5px;
+}
+
+.file-info p {
+    margin: 5px 0;
+    color: #516f90;
+}
+
+.no-receipt {
+    color: #999;
+    font-style: italic;
+}
+
+/* Professional Status Check Styling */
+#status-check {
+    padding: 60px 20px;
+    background: #f8fafc;
+}
+
+#status-check h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #004b8d;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+#status-check h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #2c63f8;
+    margin: 15px auto 0;
+}
+
+#statusForm {
+    background: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid #f0f0f0;
+}
+
+#statusForm label {
+    display: block;
+    margin: 15px 0 8px;
+    color: #004b8d;
+    font-weight: 500;
+}
+
+#statusForm input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+#statusForm input:focus {
+    outline: none;
+    border-color: #2c63f8;
+    box-shadow: 0 0 0 3px rgba(44, 99, 248, 0.1);
+}
+
+.help-text {
+    margin: 10px 0 20px;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e0e6f3;
+}
+
+.help-text p {
+    color: #516f90;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.help-box {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+}
+
+.help-box h3 {
+    color: #004b8d;
+    font-size: 1.1em;
+    margin-bottom: 12px;
+}
+
+.help-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.help-box li {
+    color: #516f90;
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.help-box li:before {
+    content: "•";
+    color: #2c63f8;
+    position: absolute;
+    left: 8px;
+}
+
+.status-check-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 24px;
+    background: #2c63f8;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.status-check-btn:hover {
+    background: #1a4cd1;
+    transform: translateY(-2px);
+}
+
+.btn-icon {
+    font-size: 1.1em;
+}
+
+.status-help {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #eef3fb;
+}
+
+.status-help p {
+    color: #004b8d;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.status-help ol {
+    color: #516f90;
+    padding-left: 20px;
+}
+
+.status-help li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .status-search-form {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .status-check-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .status-container {
+        padding: 20px;
+    }
+}
+
+/* Claim card and status badge styles (professional look) */
+.claim-card {
+    max-width: 680px;
+    margin: 18px auto;
+    padding: 18px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(15, 38, 75, 0.06);
+    border: 1px solid #eef3fb;
+    color: #16335b;
+}
+
+.claim-card .claim-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.claim-card .claim-body p {
+    margin: 8px 0;
+    color: #2b3b50;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.status-badge.pending { background: #ff9f00; }
+.status-badge.approved { background: #28a745; }
+.status-badge.rejected { background: #dc3545; }
+
+.copy-id {
+    margin-left: 8px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid #e0e6f3;
+    background: #f6f9ff;
+    cursor: pointer;
+}
+
+.hidden { display: none !important; }
